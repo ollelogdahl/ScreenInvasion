@@ -5,15 +5,9 @@ Olle Logdahl, 12 February 2020
 ---
 **Screen Invasion** is a silly screen experiment made in C#.
 
-<!--
-<p align="center">
-  <img src="https://github.com/ollelogdahl/DungeonGenerator/blob/master/Media/main.gif" />
-</p>
--->
-
 ## Installation / Getting Started
 - Clone git repo and build yourself
-> git clone https://github.com/ollelogdahl/DungeonGenerator.git
+> git clone https://github.com/ollelogdahl/ScreenInvasion.git
 
 <br />
 
