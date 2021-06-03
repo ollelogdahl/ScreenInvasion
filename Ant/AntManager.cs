@@ -10,7 +10,7 @@ namespace AntInvasion {
 
         public List<Ant> Ants {get;} = new List<Ant>();
 
-        public int AntCount {get;} = 1024;
+        public int AntCount {get;} = 25000;
         public int AntSpawnRate {get; set;} = 40;
 
         private OLehmer lehmer = new OLehmer();

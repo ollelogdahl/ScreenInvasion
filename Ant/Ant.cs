@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -40,11 +41,23 @@ namespace AntInvasion {
             shadowBitmap.SetPixel(0, 1, Color.Black);
 
             // Creates bitmap for antbrush
-            Bitmap antBitmap = new Bitmap(2, 2);
-            antBitmap.SetPixel(0, 0, Color.SaddleBrown);
-            antBitmap.SetPixel(1, 1, Color.SaddleBrown);
-            antBitmap.SetPixel(1, 0, Color.Brown);
-            antBitmap.SetPixel(0, 1, Color.Brown);
+            Bitmap antBitmap = new Bitmap(1, 1);
+            Random random = new Random();
+            int rnd = random.Next(0, 4);
+            switch (rnd) {
+                case 0:
+                    antBitmap.SetPixel(0, 0, Color.Brown);
+                    break;
+                case 1:
+                    antBitmap.SetPixel(0, 0, Color.RosyBrown);
+                    break;
+                case 2:
+                    antBitmap.SetPixel(0, 0, Color.SaddleBrown);
+                    break;
+                case 3:
+                    antBitmap.SetPixel(0, 0, Color.SandyBrown);
+                    break;
+            }
             
             // Create texturebrushes
             ShadowBrush = new TextureBrush(shadowBitmap);
@@ -87,11 +100,11 @@ namespace AntInvasion {
             // Draws Ant ------------------------------------------------------
             Rig.CalculateRig(Position, Rotation);
 
-            ODrawing.FillCircleFromCenter(g, Brushes.SaddleBrown, Rig.BodyA, 
+            ODrawing.FillCircleFromCenter(g, AntBrush, Rig.BodyA, 
                                           (int)Rig.BodyASize);
-            ODrawing.FillCircleFromCenter(g, Brushes.SaddleBrown, Rig.BodyB, 
+            ODrawing.FillCircleFromCenter(g, AntBrush, Rig.BodyB, 
                                           (int)Rig.BodyBSize);
-            ODrawing.FillCircleFromCenter(g, Brushes.SaddleBrown, Rig.BodyC, 
+            ODrawing.FillCircleFromCenter(g, AntBrush, Rig.BodyC, 
                                           (int)Rig.BodyCSize);
         }
     }
